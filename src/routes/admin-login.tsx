@@ -38,22 +38,33 @@ function AdminLogin() {
           <p className="text-sm text-muted-foreground">Manage inventory & beds</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="username">Admin Username</Label>
-            <Input id="username" value={username} onChange={(e) => setUsername(e.target.value)} required />
+            <Input
+              id="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && handleLogin()}
+            />
           </div>
           <div className="space-y-2">
             <Label htmlFor="password">Password</Label>
-            <Input id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+            <Input
+              id="password"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && handleLogin()}
+            />
           </div>
           {error && (
             <Alert variant="destructive">
               <AlertDescription>{error}</AlertDescription>
             </Alert>
           )}
-          <Button type="submit" className="w-full">Login as Admin</Button>
-        </form>
+          <Button type="button" onClick={handleLogin} className="w-full">Login as Admin</Button>
+        </div>
 
         <div className="mt-6 p-3 rounded-md bg-muted text-xs text-muted-foreground">
           <div className="font-medium mb-1">Demo credentials:</div>
