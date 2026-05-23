@@ -9,7 +9,7 @@ import { getSession } from "@/lib/auth";
 import { DashboardHeader } from "@/components/DashboardHeader";
 
 export const Route = createFileRoute("/dashboard")({
-  head: () => ({ meta: [{ title: "Dashboard — MediTrack" }] }),
+  head: () => ({ meta: [{ title: "Dashboard — CareConnect" }] }),
   component: Dashboard,
 });
 

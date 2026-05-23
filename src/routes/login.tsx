@@ -9,7 +9,7 @@ import { User } from "lucide-react";
 import { login } from "@/lib/auth";
 
 export const Route = createFileRoute("/login")({
-  head: () => ({ meta: [{ title: "User Login — MediTrack" }] }),
+  head: () => ({ meta: [{ title: "User Login — CareConnect" }] }),
   component: UserLogin,
 });
 

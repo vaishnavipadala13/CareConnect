@@ -19,14 +19,14 @@ function Index() {
       <header className="border-b">
         <div className="container mx-auto px-6 py-4 flex items-center gap-2">
           <Activity className="h-6 w-6 text-primary" />
-          <span className="font-semibold">MediTrack</span>
+          <span className="font-semibold">CareConnect</span>
         </div>
       </header>
 
       <main className="container mx-auto px-6 py-16">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h1 className="text-5xl font-bold tracking-tight mb-4">
-            Hospital Bed & Blood Tracker
+            CareConnect
           </h1>
           <p className="text-lg text-muted-foreground">
             Real-time monitoring of bed availability and blood inventory across hospitals.

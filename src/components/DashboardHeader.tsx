@@ -22,7 +22,7 @@ export function DashboardHeader({ title }: { title: string }) {
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
           <Activity className="h-6 w-6 text-primary" />
-          <span className="font-semibold">MediTrack</span>
+          <span className="font-semibold">CareConnect</span>
           <span className="text-muted-foreground hidden sm:inline">— {title}</span>
         </Link>
         <div className="flex items-center gap-3">
