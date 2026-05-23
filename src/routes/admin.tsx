@@ -22,7 +22,7 @@ import { DashboardHeader } from "@/components/DashboardHeader";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/admin")({
-  head: () => ({ meta: [{ title: "Admin — MediTrack" }] }),
+  head: () => ({ meta: [{ title: "Admin — CareConnect" }] }),
   component: AdminPanel,
 });
 

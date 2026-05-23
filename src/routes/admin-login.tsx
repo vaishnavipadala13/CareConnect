@@ -9,7 +9,7 @@ import { ShieldCheck } from "lucide-react";
 import { login } from "@/lib/auth";
 
 export const Route = createFileRoute("/admin-login")({
-  head: () => ({ meta: [{ title: "Admin Login — MediTrack" }] }),
+  head: () => ({ meta: [{ title: "Admin Login — CareConnect" }] }),
   component: AdminLogin,
 });
 
