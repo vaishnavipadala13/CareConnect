@@ -19,8 +19,7 @@ function AdminLogin() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleLogin = () => {
     if (login("admin", username, password)) {
       navigate({ to: "/admin" });
     } else {
