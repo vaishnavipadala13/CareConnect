@@ -62,6 +62,15 @@
 }
 
 :root {
+  --medical-red: oklch(0.55 0.22 25);
+  --medical-red-foreground: oklch(0.99 0 0);
+  --medical-teal: oklch(0.55 0.12 200);
+  --warning: oklch(0.75 0.18 70);
+  --warning-foreground: oklch(0.2 0.02 70);
+  --success: oklch(0.6 0.15 145);
+  --gradient-hero: linear-gradient(135deg, oklch(0.55 0.22 25) 0%, oklch(0.5 0.18 15) 100%);
+  --shadow-card: 0 4px 20px -8px oklch(0.55 0.22 25 / 0.2);
+
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);
