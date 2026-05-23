@@ -6,7 +6,7 @@ import { Activity, Droplet, BedDouble, ShieldCheck, User } from "lucide-react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Hospital Bed & Blood Tracker" },
+      { title: "CareConnect" },
       { name: "description", content: "Real-time hospital bed availability and blood inventory monitoring." },
     ],
   }),
