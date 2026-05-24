@@ -42,6 +42,8 @@ Axios Requests  │  REST API Calls
 │                    Database Layer                           │
 │                     (MongoDB Atlas)                         │
 └─────────────────────────────────────────────────────────────┘
+
+
 ## 📁 Project Structure
 
 LifeSync/
@@ -78,6 +80,8 @@ LifeSync/
 └── routes/
 ├── auth.routes.ts          # Registration and validation endpoints
 └── inventory.routes.ts     # Protected allocation and adjustments endpoints
+
+
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -103,6 +107,8 @@ cd ../frontend
 npm install
 npm run dev
 Open http://localhost:8080/ in your browser to view the interface.
+
+
 ⚙️ How It Works
 Live Sync State Lifecycle
 [User loads Dashboard] 
@@ -115,6 +121,8 @@ Live Sync State Lifecycle
 [Launch 2-Minute Web Workers/Intervals]
          │
          ▼ (Timer elapses / 120s)
+
+
 Roles and Permissions MatrixEntity FocusUser / Responder AccessAdmin / Staff AccessICU / General Bed Metrics👁️ View Only⚙️ Full Modification (CRUD)Blood Units Status👁️ View Only⚙️ Full Modification (CRUD)Expiry Flag Adjustments🚫 Restricted⚙️ Full Modification (CRUD)
 🛡️ Security & Privacy
 Secure Session Handling: Admin pathways are fully protected using industry-standard HTTP-Only JSON Web Tokens (JWT).
@@ -130,6 +138,8 @@ Client-Safe Serialization: User views omit explicit hospital batch identificatio
 [ ] Geofencing: Dynamic mapping sorting available hospitals by physical distance relative to active paramedics.
 
 [ ] HL7 FHIR Protocols: Interoperability compliance integration for external health network data exchanges.
+
+
 
 👤 Author
 Your Name
