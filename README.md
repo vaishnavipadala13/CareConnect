@@ -44,43 +44,49 @@ Axios Requests  │  REST API Calls
 └─────────────────────────────────────────────────────────────┘
 
 
-## 📁 Project Structure
-
-LifeSync/
-├── frontend/                       # React + TypeScript Frontend
-│   ├── index.html                  # Entry HTML
-│   ├── package.json                # Frontend dependencies
-│   ├── vite.config.ts              # Vite bundle configuration
-│   └── src/
-│       ├── main.tsx                # Client entry point
-│       ├── App.tsx                 # Root router and layout shell
-│       ├── components/
-│       │   ├── BedStatusCard.tsx   # Visual status indicator for ICU/General beds
-│       │   ├── BloodGroupRow.tsx   # Inventory display with volumes & expiry trackers
-│       │   ├── CountdownTimer.tsx  # Interactive countdown visual for the 2-min refresh
-│       │   └── Navbar.tsx          # Dynamic navigation with role sign-outs
-│       ├── pages/
-│       │   ├── UserLogin.tsx       # Authentication interface for public users
-│       │   ├── AdminLogin.tsx      # Secured gateway for medical supervisors
-│       │   ├── UserDashboard.tsx   # Read-only live inventory tracking
-│       │   └── AdminDashboard.tsx  # CRUD management layout for beds & blood units
-│       ├── hooks/
-│       │   └── useAutoRefresh.ts   # Custom tab polling hook (120-second interval)
-│       └── utils/
-│           └── dateHelpers.ts      # Validates blood shelf-life and shelf expiry flags
+CareConnect/
 │
-└── backend/                        # Node.js API Environment
-├── server.ts                   # Application server bootstrap
-├── package.json                # API dependencies
-├── middleware/
-│   └── authHandler.ts          # Validates JWT tokens and maps roles (User vs Admin)
-├── models/
-│   ├── Bed.ts                  # Schema definitions (ICU, General, Pediatric)
-│   └── BloodStock.ts           # Schema definitions (Group, Units, Expiry, Batch)
-└── routes/
-├── auth.routes.ts          # Registration and validation endpoints
-└── inventory.routes.ts     # Protected allocation and adjustments endpoints
-
+├── frontend/                         # React + TypeScript Frontend
+│   ├── index.html
+│   ├── package.json
+│   ├── vite.config.ts
+│   │
+│   └── src/
+│       ├── main.tsx                  # Application entry point
+│       ├── App.tsx                   # Router and layout shell
+│       │
+│       ├── components/
+│       │   ├── BedStatusCard.tsx
+│       │   ├── BloodGroupRow.tsx
+│       │   ├── CountdownTimer.tsx
+│       │   └── Navbar.tsx
+│       │
+│       ├── pages/
+│       │   ├── UserLogin.tsx
+│       │   ├── AdminLogin.tsx
+│       │   ├── UserDashboard.tsx
+│       │   └── AdminDashboard.tsx
+│       │
+│       ├── hooks/
+│       │   └── useAutoRefresh.ts
+│       │
+│       └── utils/
+│           └── dateHelpers.ts
+│
+└── backend/                          # Node.js + Express Backend
+    ├── server.ts
+    ├── package.json
+    │
+    ├── middleware/
+    │   └── authHandler.ts
+    │
+    ├── models/
+    │   ├── Bed.ts
+    │   └── BloodStock.ts
+    │
+    └── routes/
+        ├── auth.routes.ts
+        └── inventory.routes.ts
 
 ## 🚀 Getting Started
 
