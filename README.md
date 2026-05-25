@@ -187,6 +187,4 @@ Open [http://localhost:8080](http://localhost:8080) in your browser to view the 
 
 ---
 
-## 📄 License
 
-This project is developed for educational, healthcare, and hackathon purposes.
