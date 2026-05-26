@@ -1,4 +1,5 @@
-# 🏥 CareConnect — Real-Time Hospital Bed & Blood Tracker
+# 🏥 CareConnect
+# Real-Time Hospital Bed & Blood Tracker
 
 CareConnect is a decentralized, high-concurrency real-time management system designed to track hospital bed availability and blood bank inventories. Leveraging automated state polling and secure role-based access control, the system refreshes every 2 minutes — ensuring emergency responders, medical staff, and patients always have access to life-saving inventory data without delay.
 
@@ -187,4 +188,6 @@ Open [http://localhost:8080](http://localhost:8080) in your browser to view the 
 
 ---
 
+## License
 
+This project is licensed under the [MIT License](LICENSE).
