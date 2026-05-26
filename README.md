@@ -129,8 +129,6 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:8080](http://localhost:8080) in your browser to view the interface.
-
 ---
 
 ## ⚙️ How It Works
