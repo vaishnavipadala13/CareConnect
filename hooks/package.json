@@ -1,0 +1,7 @@
+{
+  "name": "careconnect-vercel-hooks-root",
+  "private": true,
+  "scripts": {
+    "build": "cd .. && npm install && npm run build && rm -rf public && cp -R ../public ./public"
+  }
+}
