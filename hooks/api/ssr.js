@@ -4,7 +4,7 @@ import fs from "fs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const serverFile = path.resolve(__dirname, "..", "..", "dist", "server", "server.js");
+const serverFile = path.resolve(__dirname, "..", "dist", "server", "server.js");
 
 let ssrServer;
 async function loadServer() {
