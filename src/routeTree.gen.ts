@@ -9,15 +9,22 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as UserPortalRouteImport } from './routes/user-portal'
 import { Route as SignupRouteImport } from './routes/signup'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as GetStartedRouteImport } from './routes/get-started'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as AdminSignupRouteImport } from './routes/admin-signup'
+import { Route as AdminPortalRouteImport } from './routes/admin-portal'
 import { Route as AdminLoginRouteImport } from './routes/admin-login'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
 
+const UserPortalRoute = UserPortalRouteImport.update({
+  id: '/user-portal',
+  path: '/user-portal',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SignupRoute = SignupRouteImport.update({
   id: '/signup',
   path: '/signup',
@@ -43,6 +50,11 @@ const AdminSignupRoute = AdminSignupRouteImport.update({
   path: '/admin-signup',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminPortalRoute = AdminPortalRouteImport.update({
+  id: '/admin-portal',
+  path: '/admin-portal',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminLoginRoute = AdminLoginRouteImport.update({
   id: '/admin-login',
   path: '/admin-login',
@@ -63,32 +75,38 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/admin-login': typeof AdminLoginRoute
+  '/admin-portal': typeof AdminPortalRoute
   '/admin-signup': typeof AdminSignupRoute
   '/dashboard': typeof DashboardRoute
   '/get-started': typeof GetStartedRoute
   '/login': typeof LoginRoute
   '/signup': typeof SignupRoute
+  '/user-portal': typeof UserPortalRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/admin-login': typeof AdminLoginRoute
+  '/admin-portal': typeof AdminPortalRoute
   '/admin-signup': typeof AdminSignupRoute
   '/dashboard': typeof DashboardRoute
   '/get-started': typeof GetStartedRoute
   '/login': typeof LoginRoute
   '/signup': typeof SignupRoute
+  '/user-portal': typeof UserPortalRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/admin-login': typeof AdminLoginRoute
+  '/admin-portal': typeof AdminPortalRoute
   '/admin-signup': typeof AdminSignupRoute
   '/dashboard': typeof DashboardRoute
   '/get-started': typeof GetStartedRoute
   '/login': typeof LoginRoute
   '/signup': typeof SignupRoute
+  '/user-portal': typeof UserPortalRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -96,46 +114,61 @@ export interface FileRouteTypes {
     | '/'
     | '/admin'
     | '/admin-login'
+    | '/admin-portal'
     | '/admin-signup'
     | '/dashboard'
     | '/get-started'
     | '/login'
     | '/signup'
+    | '/user-portal'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/admin'
     | '/admin-login'
+    | '/admin-portal'
     | '/admin-signup'
     | '/dashboard'
     | '/get-started'
     | '/login'
     | '/signup'
+    | '/user-portal'
   id:
     | '__root__'
     | '/'
     | '/admin'
     | '/admin-login'
+    | '/admin-portal'
     | '/admin-signup'
     | '/dashboard'
     | '/get-started'
     | '/login'
     | '/signup'
+    | '/user-portal'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AdminRoute: typeof AdminRoute
   AdminLoginRoute: typeof AdminLoginRoute
+  AdminPortalRoute: typeof AdminPortalRoute
   AdminSignupRoute: typeof AdminSignupRoute
   DashboardRoute: typeof DashboardRoute
   GetStartedRoute: typeof GetStartedRoute
   LoginRoute: typeof LoginRoute
   SignupRoute: typeof SignupRoute
+  UserPortalRoute: typeof UserPortalRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/user-portal': {
+      id: '/user-portal'
+      path: '/user-portal'
+      fullPath: '/user-portal'
+      preLoaderRoute: typeof UserPortalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/signup': {
       id: '/signup'
       path: '/signup'
@@ -171,6 +204,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminSignupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin-portal': {
+      id: '/admin-portal'
+      path: '/admin-portal'
+      fullPath: '/admin-portal'
+      preLoaderRoute: typeof AdminPortalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/admin-login': {
       id: '/admin-login'
       path: '/admin-login'
@@ -199,11 +239,13 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdminRoute: AdminRoute,
   AdminLoginRoute: AdminLoginRoute,
+  AdminPortalRoute: AdminPortalRoute,
   AdminSignupRoute: AdminSignupRoute,
   DashboardRoute: DashboardRoute,
   GetStartedRoute: GetStartedRoute,
   LoginRoute: LoginRoute,
   SignupRoute: SignupRoute,
+  UserPortalRoute: UserPortalRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
