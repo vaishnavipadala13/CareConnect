@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SignupRouteImport } from './routes/signup'
 import { Route as LoginRouteImport } from './routes/login'
+import { Route as GetStartedRouteImport } from './routes/get-started'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as AdminSignupRouteImport } from './routes/admin-signup'
 import { Route as AdminLoginRouteImport } from './routes/admin-login'
@@ -25,6 +26,11 @@ const SignupRoute = SignupRouteImport.update({
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
   path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GetStartedRoute = GetStartedRouteImport.update({
+  id: '/get-started',
+  path: '/get-started',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DashboardRoute = DashboardRouteImport.update({
@@ -59,6 +65,7 @@ export interface FileRoutesByFullPath {
   '/admin-login': typeof AdminLoginRoute
   '/admin-signup': typeof AdminSignupRoute
   '/dashboard': typeof DashboardRoute
+  '/get-started': typeof GetStartedRoute
   '/login': typeof LoginRoute
   '/signup': typeof SignupRoute
 }
@@ -68,6 +75,7 @@ export interface FileRoutesByTo {
   '/admin-login': typeof AdminLoginRoute
   '/admin-signup': typeof AdminSignupRoute
   '/dashboard': typeof DashboardRoute
+  '/get-started': typeof GetStartedRoute
   '/login': typeof LoginRoute
   '/signup': typeof SignupRoute
 }
@@ -78,6 +86,7 @@ export interface FileRoutesById {
   '/admin-login': typeof AdminLoginRoute
   '/admin-signup': typeof AdminSignupRoute
   '/dashboard': typeof DashboardRoute
+  '/get-started': typeof GetStartedRoute
   '/login': typeof LoginRoute
   '/signup': typeof SignupRoute
 }
@@ -89,6 +98,7 @@ export interface FileRouteTypes {
     | '/admin-login'
     | '/admin-signup'
     | '/dashboard'
+    | '/get-started'
     | '/login'
     | '/signup'
   fileRoutesByTo: FileRoutesByTo
@@ -98,6 +108,7 @@ export interface FileRouteTypes {
     | '/admin-login'
     | '/admin-signup'
     | '/dashboard'
+    | '/get-started'
     | '/login'
     | '/signup'
   id:
@@ -107,6 +118,7 @@ export interface FileRouteTypes {
     | '/admin-login'
     | '/admin-signup'
     | '/dashboard'
+    | '/get-started'
     | '/login'
     | '/signup'
   fileRoutesById: FileRoutesById
@@ -117,6 +129,7 @@ export interface RootRouteChildren {
   AdminLoginRoute: typeof AdminLoginRoute
   AdminSignupRoute: typeof AdminSignupRoute
   DashboardRoute: typeof DashboardRoute
+  GetStartedRoute: typeof GetStartedRoute
   LoginRoute: typeof LoginRoute
   SignupRoute: typeof SignupRoute
 }
@@ -135,6 +148,13 @@ declare module '@tanstack/react-router' {
       path: '/login'
       fullPath: '/login'
       preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/get-started': {
+      id: '/get-started'
+      path: '/get-started'
+      fullPath: '/get-started'
+      preLoaderRoute: typeof GetStartedRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/dashboard': {
@@ -181,6 +201,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdminLoginRoute: AdminLoginRoute,
   AdminSignupRoute: AdminSignupRoute,
   DashboardRoute: DashboardRoute,
+  GetStartedRoute: GetStartedRoute,
   LoginRoute: LoginRoute,
   SignupRoute: SignupRoute,
 }

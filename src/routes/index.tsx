@@ -44,80 +44,14 @@ function Index() {
           </p>
         </div>
 
-        {/* Ready to Get Started - Portal Cards Bar */}
-        <div className="max-w-5xl mx-auto mb-16 p-8 rounded-lg bg-primary/5 border-2 border-primary/20">
-          <h2 className="text-3xl font-bold text-center mb-8">Ready to Get Started</h2>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* User Portal */}
-            <Card className="p-8 border-2 hover:border-primary/50 transition-colors">
-              <div className="mb-6">
-                <User className="h-10 w-10 text-primary mb-4" />
-                <h3 className="text-2xl font-semibold mb-2">User Portal</h3>
-                <p className="text-muted-foreground">
-                  View live bed availability, check blood inventory, and access healthcare information in real-time.
-                </p>
-              </div>
-              
-              <div className="space-y-3">
-                <div>
-                  <p className="text-sm font-semibold text-muted-foreground mb-2">New User?</p>
-                  <Button className="w-full gap-2" asChild>
-                    <Link to="/signup">
-                      <User className="h-4 w-4" />
-                      Create User Account
-                    </Link>
-                  </Button>
-                </div>
-
-                <div className="pt-3 border-t">
-                  <p className="text-sm font-semibold text-muted-foreground mb-2">Already have an account?</p>
-                  <Button variant="outline" className="w-full gap-2" asChild>
-                    <Link to="/login">
-                      <User className="h-4 w-4" />
-                      User Login
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            </Card>
-
-            {/* Admin Portal */}
-            <Card className="p-8 border-2 hover:border-primary/50 transition-colors">
-              <div className="mb-6">
-                <ShieldCheck className="h-10 w-10 text-primary mb-4" />
-                <h3 className="text-2xl font-semibold mb-2">Admin Portal</h3>
-                <p className="text-muted-foreground">
-                  Manage hospital beds, blood inventory, and monitor system activity with comprehensive dashboards.
-                </p>
-              </div>
-              
-              <div className="space-y-3">
-                <div>
-                  <p className="text-sm font-semibold text-muted-foreground mb-2">New Admin?</p>
-                  <Button variant="secondary" className="w-full gap-2" asChild>
-                    <Link to="/admin-signup">
-                      <ShieldCheck className="h-4 w-4" />
-                      Create Admin Account
-                    </Link>
-                  </Button>
-                  <p className="text-xs text-muted-foreground mt-2 text-center">
-                    💼 Need a hospital working ID to become an admin
-                  </p>
-                </div>
-
-                <div className="pt-3 border-t">
-                  <p className="text-sm font-semibold text-muted-foreground mb-2">Already an admin?</p>
-                  <Button variant="outline" className="w-full gap-2" asChild>
-                    <Link to="/admin-login">
-                      <ShieldCheck className="h-4 w-4" />
-                      Admin Login
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            </Card>
-          </div>
+        {/* Ready to Get Started - CTA Button */}
+        <div className="max-w-5xl mx-auto mb-16 text-center">
+          <Button size="lg" asChild className="gap-2 px-8 py-6 text-lg">
+            <Link to="/get-started">
+              Ready to Get Started
+              <ArrowRight className="h-5 w-5" />
+            </Link>
+          </Button>
         </div>
 
         {/* Features Grid */}
