@@ -77,8 +77,7 @@ CareConnect is a decentralized, high-concurrency real-time management system des
 </table>
 
 ---
----
----
+
 
 ## 🔄 App Flow
 
