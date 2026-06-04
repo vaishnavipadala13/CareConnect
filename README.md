@@ -63,11 +63,22 @@ CareConnect is a decentralized, high-concurrency real-time management system des
   </tr>
   <tr>
     <td><img src="screenshots/admin-portal.png" width="100%"/></td>
+  </tr>
+</table>
+
+###  Admin Dashboard
+<table>
+  <tr>
+    <td><strong>Blood Inventory Management</strong></td>
+    <td><strong>Bed Allocation Management</strong></td>
+  </tr>
+  <tr>
     <td><img src="screenshots/admin-blood.png" width="100%"/></td>
     <td><img src="screenshots/admin-beds.png" width="100%"/></td>
   </tr>
 </table>
 
+---
 ---
 
 ##  App Flow
