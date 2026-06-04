@@ -47,13 +47,8 @@ function Index() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
             <Button size="lg" asChild className="gap-2">
               <Link to="/signup">
-                Get Started Free
+                Get Started
                 <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
-            <Button size="lg" variant="outline" asChild className="gap-2">
-              <Link to="/login">
-                Already have an account?
               </Link>
             </Button>
           </div>
@@ -118,58 +113,31 @@ function Index() {
           </div>
 
           <div className="mt-6 text-center text-sm border-t pt-6">
-            <span className="text-muted-foreground">Already have an account? </span>
-            <Link to="/login" className="text-primary hover:underline font-medium">
-              Sign in
-            </Link>
+            <p className="text-muted-foreground mb-4">Already have an account?</p>
+            <div className="grid sm:grid-cols-2 gap-3">
+              <div className="space-y-2">
+                <h4 className="font-semibold text-sm">User Portal</h4>
+                <Button variant="secondary" className="w-full gap-2" asChild>
+                  <Link to="/login">
+                    <User className="h-4 w-4" />
+                    User Login
+                  </Link>
+                </Button>
+              </div>
+              <div className="space-y-2">
+                <h4 className="font-semibold text-sm">Admin Portal</h4>
+                <Button variant="secondary" className="w-full gap-2" asChild>
+                  <Link to="/admin-login">
+                    <ShieldCheck className="h-4 w-4" />
+                    Admin Sign In
+                  </Link>
+                </Button>
+                <p className="text-xs text-muted-foreground mt-2">
+                  💼 Become an admin with a hospital working ID
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-
-        {/* Portal Cards */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
-          <Card className="p-8 border-2 hover:border-primary/50 transition-colors">
-            <div className="flex items-start justify-between mb-4">
-              <div>
-                <User className="h-10 w-10 text-primary mb-4" />
-                <h2 className="text-2xl font-semibold mb-2">User Portal</h2>
-                <p className="text-muted-foreground mb-6">
-                  View live bed availability, check blood inventory, and access healthcare information in real-time.
-                </p>
-              </div>
-            </div>
-            <Button asChild className="w-full gap-2">
-              <Link to="/signup">
-                <User className="h-4 w-4" />
-                User Sign Up
-              </Link>
-            </Button>
-          </Card>
-
-          <Card className="p-8 border-2 hover:border-primary/50 transition-colors">
-            <div className="flex items-start justify-between mb-4">
-              <div>
-                <ShieldCheck className="h-10 w-10 text-primary mb-4" />
-                <h2 className="text-2xl font-semibold mb-2">Admin Portal</h2>
-                <p className="text-muted-foreground mb-6">
-                  Manage hospital beds, blood inventory, and monitor system activity with comprehensive dashboards.
-                </p>
-              </div>
-            </div>
-            <div className="space-y-2">
-              <Button asChild variant="outline" className="w-full gap-2">
-                <Link to="/admin-login">
-                  <ShieldCheck className="h-4 w-4" />
-                  Admin Login
-                </Link>
-              </Button>
-              <Button asChild variant="secondary" className="w-full gap-2">
-                <Link to="/admin-signup">
-                  <ShieldCheck className="h-4 w-4" />
-                  Create Admin Account
-                </Link>
-              </Button>
-            </div>
-          </Card>
         </div>
 
         {/* Final CTA */}
