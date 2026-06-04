@@ -25,9 +25,9 @@ CareConnect is a comprehensive platform that enables hospitals, blood banks, eme
 - **Blood Bank Inventory**      - Monitor blood type availability and stock levels
 - **Emergency Response**        - Facilitate rapid resource allocation during crises
 - **Patient Access**            - Enable patients to find available resources quickly
-- 
+  
 
-- ##  Architecture
+ ##  Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
