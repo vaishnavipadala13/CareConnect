@@ -17,54 +17,55 @@ CareConnect is a decentralized, high-concurrency real-time management system des
 
 </div>
    
-## 🎯 Overview
+##  Overview
 
 CareConnect is a comprehensive platform that enables hospitals, blood banks, emergency responders, and patients to quickly access critical healthcare resources during emergencies. The application provides real-time visibility into:
 
 - **Hospital Bed Availability** - Track ICU, general ward, and specialized beds in real-time
-- **Blood Bank Inventory** - Monitor blood type availability and stock levels
-- **Emergency Response** - Facilitate rapid resource allocation during crises
-- **Patient Access** - Enable patients to find available resources quickly
+- **Blood Bank Inventory**      - Monitor blood type availability and stock levels
+- **Emergency Response**        - Facilitate rapid resource allocation during crises
+- **Patient Access**            - Enable patients to find available resources quickly
+- 
 
-## ✨ Key Features
+- ##  Architecture
 
-- **Real-Time Dashboard** - Live updates of bed availability and blood inventory
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│              CareConnect Frontend (React + TypeScript + Vite)       │
+├───────────────────┬─────────────────────────────┬───────────────────┤
+│   User Portal     │    Inventory Dashboard       │   Admin Portal    │
+│  (Public View)    │   (2-Min Polling Engine)     │   (Restricted)    │
+└───────────────────┴──────────────┬──────────────┴───────────────────┘
+                                   │
+                        Axios / REST API Calls
+                                   │
+                                   ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│              CareConnect Backend (Node.js + Express)                │
+├──────────────────────────────────┬──────────────────────────────────┤
+│        Auth Middleware           │       Inventory Controller       │
+└──────────────────┬───────────────┴──────────────────┬──────────────┘
+                   │         Mongoose Queries          │
+                   ▼                                   ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                    Database Layer (MongoDB Atlas)                   │
+└─────────────────────────────────────────────────────────────────────┘
+
+```
+## Key Features
+
+- **Real-Time Dashboard**         - Live updates of bed availability and blood inventory
 - **Advanced Search & Filtering** - Find resources by hospital, location, blood type
-- **Responsive Design** - Optimized for desktop, tablet, and mobile devices
-- **User Authentication** - Secure login for different user roles (admin, hospital, patient)
-- **Resource Management** - Update and manage hospital resources in real-time
-- **Emergency Alerts** - Get notified of critical resource shortages
-- **Data Visualization** - Charts and analytics for resource trends
-- **High Performance** - Optimized for fast load times and smooth interactions
+- **Responsive Design**           - Optimized for desktop, tablet, and mobile devices
+- **User Authentication**         - Secure login for different user roles (admin, hospital, patient)
+- **Resource Management**         - Update and manage hospital resources in real-time
+- **Emergency Alerts**            - Get notified of critical resource shortages
+- **Data Visualization**          - Charts and analytics for resource trends
+- **High Performance**            - Optimized for fast load times and smooth interactions
 
-## 🛠 Tech Stack
 
-### Frontend
-- **Framework**: [React 19.2.0](https://react.dev/) - UI library
-- **Routing**: [@tanstack/react-router](https://tanstack.com/router/) - Type-safe routing
-- **State Management**: [@tanstack/react-query](https://tanstack.com/query/) - Server state management
-- **Styling**: [Tailwind CSS 4.2.1](https://tailwindcss.com/) - Utility-first CSS
-- **UI Components**: [Radix UI](https://www.radix-ui.com/) - Accessible component primitives
-- **Forms**: [React Hook Form](https://react-hook-form.com/) - Performant form handling
-- **Validation**: [Zod](https://zod.dev/) - TypeScript-first schema validation
-- **Icons**: [Lucide React](https://lucide.dev/) - Beautiful icon library
-- **Notifications**: [Sonner](https://sonner.emilkowal.ski/) - Toast notifications
-- **Language**: [TypeScript 5.8.3](https://www.typescriptlang.org/) - Type-safe development
-
-### Backend & Deployment
-- **Server Framework**: [TanStack Start](https://tanstack.com/start/) - Full-stack React framework
-- **Deployment**: [Vercel](https://vercel.com/) - Edge-optimized deployment
-- **Build Tool**: [Vite](https://vitejs.dev/) - Next-generation build tool
-- **Database**: PostgreSQL (via connection string)
-- **Runtime**: Node.js with ESM support
-
-### Development Tools
-- **Linting**: [ESLint 9.32.0](https://eslint.org/)
-- **Code Formatting**: [Prettier 3.7.3](https://prettier.io/)
-- **Package Manager**: [Bun](https://bun.sh/)
-- **Build Configuration**: [TanStack Router Plugin](https://tanstack.com/router/)
-
-## 🚀 Quick Start
+``
+##  Quick Start
 
 ### Prerequisites
 - Node.js 18+ or [Bun 1.0+](https://bun.sh/)
@@ -97,8 +98,8 @@ CareConnect is a comprehensive platform that enables hospitals, blood banks, eme
    # or
    npm run dev
    ```
+The app will be available at `http://localhost:5173`
 
-   The app will be available at `http://localhost:5173`
 
 ## 📁 Project Structure
 
@@ -147,46 +148,34 @@ CareConnect/
 └── README.md                # This file
 ```
 
-## 🖥 Development
+##  Features in Detail
 
-### Available Scripts
+### Dashboard
+- Real-time resource availability
+- Search and filter capabilities
+- Resource details and location mapping
+- Booking and request features
 
-- `bun run dev` - Start development server with hot reload
-- `bun run build` - Build for production
-- `bun run preview` - Preview production build locally
-- `bun run lint` - Run ESLint checks
-- `bun run format` - Format code with Prettier
+### Admin Panel
+- Resource management interface
+- Inventory updates
+- User management
+- Analytics and reporting
 
-### Development Workflow
+### Emergency Features
+- Priority alerts
+- Quick resource lookup
+- Emergency contact information
+- Resource reservation system
+- 
+- ##  Authentication
 
-1. Create feature branches for new features
-2. Make your changes and test thoroughly
-3. Run linting and formatting before committing
-4. Submit pull requests with clear descriptions
-
-## 🚢 Deployment
-
-### Vercel Deployment (Recommended)
-
-The application is configured for automatic deployment on Vercel:
-
-1. **Connect repository** to Vercel
-2. **Configure environment variables** in Vercel dashboard
-3. **Enable automatic deployments** on push to main
-4. **View deployments** at [Vercel Dashboard](https://vercel.com)
-
-**Current Deployment**: [care-connect-neon.vercel.app](https://care-connect-neon.vercel.app/)
-
-### Configuration Files
-- `vercel.json` - Vercel deployment settings
-- `api/ssr.ts` - Server-side rendering for Vercel Functions
-
-### Build Output
-- Static assets: `public/`
-- Server files: `dist/`
-- Deployment handled by Vercel automatically
-
-## 📋 Usage
+- User-based authentication for patients
+- Admin authentication for hospital staff
+- Secure session management
+- Role-based access control
+- 
+##  Usage
 
 ### For Patients
 1. Navigate to the home page
@@ -208,86 +197,7 @@ The application is configured for automatic deployment on Vercel:
 3. Get alerts for critical shortages
 4. Coordinate resource allocation
 
-## 🔐 Authentication
-
-- User-based authentication for patients
-- Admin authentication for hospital staff
-- Secure session management
-- Role-based access control
-
-## 📊 Features in Detail
-
-### Dashboard
-- Real-time resource availability
-- Search and filter capabilities
-- Resource details and location mapping
-- Booking and request features
-
-### Admin Panel
-- Resource management interface
-- Inventory updates
-- User management
-- Analytics and reporting
-
-### Emergency Features
-- Priority alerts
-- Quick resource lookup
-- Emergency contact information
-- Resource reservation system
-
-## 🐛 Troubleshooting
-
-### Build Issues
-- Clear cache: `rm -rf .next node_modules`
-- Reinstall dependencies: `bun install`
-- Check Node version: `node --version`
-
-### Deployment Issues
-- Check Vercel logs in dashboard
-- Verify environment variables
-- Review `vercel.json` configuration
-- Check browser console for errors
-
-### Development Issues
-- Ensure port 5173 is available
-- Check TypeScript errors: `bun run type-check`
-- Review console logs for errors
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-### Code Standards
-- Follow TypeScript best practices
-- Use meaningful variable names
-- Add comments for complex logic
-- Test thoroughly before submitting
-
-## 📧 Support & Contact
-
-- **GitHub Issues**: [Report bugs](https://github.com/vaishnavipadala13/CareConnect/issues)
-- **Email**: [vaishnavipadala13@gmail.com](mailto:vaishnavipadala13@gmail.com)
-- **Portfolio**: [Vaishnavi Padala](https://github.com/vaishnavipadala13)
-
-## 🙏 Acknowledgments
-
-- Built with [TanStack](https://tanstack.com/) ecosystem
-- UI components from [Radix UI](https://www.radix-ui.com/)
-- Styled with [Tailwind CSS](https://tailwindcss.com/)
-- Deployed on [Vercel](https://vercel.com/)
-- Icons from [Lucide React](https://lucide.dev/)
-
-## 📈 Roadmap
+ ##  Roadmap
 
 - [ ] Mobile app (React Native)
 - [ ] Advanced analytics dashboard
@@ -297,6 +207,30 @@ Contributions are welcome! Please follow these steps:
 - [ ] Real-time notifications via push
 - [ ] Telemedicine features
 - [ ] Offline functionality
+
+
+##  Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+##  Author
+
+**Vaishnavi Padala**
+
+- GitHub: [@vaishnavipadala13](https://github.com/vaishnavipadala13)
+- Email: [vaishnavipadala13@gmail.com](mailto:vaishnavipadala13@gmail.com)
+
+
+##  License
+
+This project is licensed under the [MIT License](LICENSE).
+
 
 
 ---
