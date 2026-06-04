@@ -36,10 +36,7 @@ function Index() {
       <main className="container mx-auto px-6 py-12">
         {/* Hero Section */}
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <div className="inline-block mb-6 px-4 py-2 rounded-full bg-primary/10 text-sm font-medium text-primary">
-            ✨ Real-time Healthcare Management
-          </div>
-          <h1 className="text-6xl font-bold tracking-tight mb-6 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+          <h1 className="text-[28px] font-bold tracking-tight mb-6 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent" style={{ fontFamily: "Montserrat" }}>
             Healthcare at Your Fingertips
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
@@ -89,53 +86,6 @@ function Index() {
           </Card>
         </div>
 
-        {/* Portal Cards */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
-          <Card className="p-8 border-2 hover:border-primary/50 transition-colors">
-            <div className="flex items-start justify-between mb-4">
-              <div>
-                <User className="h-10 w-10 text-primary mb-4" />
-                <h2 className="text-2xl font-semibold mb-2">Patient Portal</h2>
-                <p className="text-muted-foreground mb-6">
-                  View live bed availability, check blood inventory, and access healthcare information in real-time.
-                </p>
-              </div>
-            </div>
-            <Button asChild className="w-full gap-2">
-              <Link to="/signup">
-                <User className="h-4 w-4" />
-                Patient Sign Up
-              </Link>
-            </Button>
-          </Card>
-
-          <Card className="p-8 border-2 hover:border-primary/50 transition-colors">
-            <div className="flex items-start justify-between mb-4">
-              <div>
-                <ShieldCheck className="h-10 w-10 text-primary mb-4" />
-                <h2 className="text-2xl font-semibold mb-2">Admin Portal</h2>
-                <p className="text-muted-foreground mb-6">
-                  Manage hospital beds, blood inventory, and monitor system activity with comprehensive dashboards.
-                </p>
-              </div>
-            </div>
-            <div className="space-y-2">
-              <Button asChild variant="outline" className="w-full gap-2">
-                <Link to="/admin-login">
-                  <ShieldCheck className="h-4 w-4" />
-                  Admin Login
-                </Link>
-              </Button>
-              <Button asChild variant="secondary" className="w-full gap-2">
-                <Link to="/admin-signup">
-                  <ShieldCheck className="h-4 w-4" />
-                  Create Admin Account
-                </Link>
-              </Button>
-            </div>
-          </Card>
-        </div>
-
         {/* Authentication Methods */}
         <div className="max-w-2xl mx-auto mb-16 text-center">
           <h2 className="text-3xl font-bold mb-4">Sign Up in Seconds</h2>
@@ -166,53 +116,60 @@ function Index() {
               </Button>
             </Card>
           </div>
+
+          <div className="mt-6 text-center text-sm border-t pt-6">
+            <span className="text-muted-foreground">Already have an account? </span>
+            <Link to="/login" className="text-primary hover:underline font-medium">
+              Sign in
+            </Link>
+          </div>
         </div>
 
-        {/* Benefits Section */}
-        <div className="max-w-3xl mx-auto mb-16 text-center">
-          <h2 className="text-3xl font-bold mb-8">Why Choose CareConnect?</h2>
-          
-          <div className="grid md:grid-cols-2 gap-6 mb-8">
-            <div className="text-left">
-              <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mb-3 mx-auto md:mx-0">
-                <span className="font-bold text-primary">✓</span>
+        {/* Portal Cards */}
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
+          <Card className="p-8 border-2 hover:border-primary/50 transition-colors">
+            <div className="flex items-start justify-between mb-4">
+              <div>
+                <User className="h-10 w-10 text-primary mb-4" />
+                <h2 className="text-2xl font-semibold mb-2">User Portal</h2>
+                <p className="text-muted-foreground mb-6">
+                  View live bed availability, check blood inventory, and access healthcare information in real-time.
+                </p>
               </div>
-              <h3 className="font-semibold mb-2">Real-time Updates</h3>
-              <p className="text-muted-foreground text-sm">
-                Get instant notifications about bed availability and blood inventory changes.
-              </p>
             </div>
+            <Button asChild className="w-full gap-2">
+              <Link to="/signup">
+                <User className="h-4 w-4" />
+                User Sign Up
+              </Link>
+            </Button>
+          </Card>
 
-            <div className="text-left">
-              <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mb-3 mx-auto md:mx-0">
-                <span className="font-bold text-primary">✓</span>
+          <Card className="p-8 border-2 hover:border-primary/50 transition-colors">
+            <div className="flex items-start justify-between mb-4">
+              <div>
+                <ShieldCheck className="h-10 w-10 text-primary mb-4" />
+                <h2 className="text-2xl font-semibold mb-2">Admin Portal</h2>
+                <p className="text-muted-foreground mb-6">
+                  Manage hospital beds, blood inventory, and monitor system activity with comprehensive dashboards.
+                </p>
               </div>
-              <h3 className="font-semibold mb-2">Easy to Use</h3>
-              <p className="text-muted-foreground text-sm">
-                Intuitive interface designed for healthcare professionals and patients.
-              </p>
             </div>
-
-            <div className="text-left">
-              <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mb-3 mx-auto md:mx-0">
-                <span className="font-bold text-primary">✓</span>
-              </div>
-              <h3 className="font-semibold mb-2">Secure & Compliant</h3>
-              <p className="text-muted-foreground text-sm">
-                HIPAA-compliant with enterprise-grade security for your data.
-              </p>
+            <div className="space-y-2">
+              <Button asChild variant="outline" className="w-full gap-2">
+                <Link to="/admin-login">
+                  <ShieldCheck className="h-4 w-4" />
+                  Admin Login
+                </Link>
+              </Button>
+              <Button asChild variant="secondary" className="w-full gap-2">
+                <Link to="/admin-signup">
+                  <ShieldCheck className="h-4 w-4" />
+                  Create Admin Account
+                </Link>
+              </Button>
             </div>
-
-            <div className="text-left">
-              <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mb-3 mx-auto md:mx-0">
-                <span className="font-bold text-primary">✓</span>
-              </div>
-              <h3 className="font-semibold mb-2">24/7 Support</h3>
-              <p className="text-muted-foreground text-sm">
-                Round-the-clock customer support to help you succeed.
-              </p>
-            </div>
-          </div>
+          </Card>
         </div>
 
         {/* Final CTA */}
