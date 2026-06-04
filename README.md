@@ -16,6 +16,73 @@ CareConnect is a decentralized, high-concurrency real-time management system des
 ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
 
 </div>
+
+##  Application Walkthrough
+
+###  Landing Page
+![Landing Page](screenshots/landing.png)
+
+---
+
+###  Get Started — Portal Selection
+![Portal Selection](screenshots/portal-selection.png)
+
+---
+
+###  User Portal
+
+<table>
+  <tr>
+    <td><strong>User Portal Home</strong></td>
+    <td><strong>Create Account</strong></td>
+    <td><strong>User Login</strong></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/user-portal.png" width="100%"/></td>
+    <td><img src="screenshots/create-account.png" width="100%"/></td>
+    <td><img src="screenshots/user-login.png" width="100%"/></td>
+  </tr>
+</table>
+
+---
+
+###  User Dashboard — Live Hospital Status
+![User Dashboard](screenshots/dashboard.png)
+
+> Auto-refreshes every 2 minutes with live blood inventory and bed availability data.
+
+---
+
+###  Admin Portal
+
+<table>
+  <tr>
+    <td><strong>Admin Portal Home</strong></td>
+    <td><strong>Blood Inventory Management</strong></td>
+    <td><strong>Bed Allocation Management</strong></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/admin-portal.png" width="100%"/></td>
+    <td><img src="screenshots/admin-blood.png" width="100%"/></td>
+    <td><img src="screenshots/admin-beds.png" width="100%"/></td>
+  </tr>
+</table>
+
+---
+
+##  App Flow
+Landing Page
+└── Ready to Get Started
+├── 👤 User Portal
+│       ├── Create User Account
+│       └── User Login → 📊 Live Dashboard
+│                           ├── Blood Inventory (A+, A-, B+, B-, O+, O-, AB+, AB-)
+│                           └── Bed Availability (by Hospital)
+└── 🛡️ Admin Portal
+├── Create Admin Account (requires Hospital ID)
+└── Admin Login → ⚙️ Admin Management
+├── 🩸 Blood Tab — Add/Edit/Delete blood units
+└── 🛏️ Beds Tab — Add/Edit/Delete hospitals & beds
    
 ##  Overview
 
