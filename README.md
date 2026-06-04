@@ -64,7 +64,7 @@ CareConnect is a comprehensive platform that enables hospitals, blood banks, eme
 - **High Performance**            - Optimized for fast load times and smooth interactions
 
 
-``
+
 ##  Quick Start
 
 ### Prerequisites
@@ -230,7 +230,6 @@ Contributions are welcome! Please follow these steps:
 ##  License
 
 This project is licensed under the [MIT License](LICENSE).
-
 
 
 
