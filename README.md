@@ -289,19 +289,6 @@ Contributions are welcome! Please follow these steps:
 - [ ] Telemedicine features
 - [ ] Offline functionality
 
-## 🔗 Links
-
-- **Live Demo**: [care-connect-neon.vercel.app](https://care-connect-neon.vercel.app/)
-- **Repository**: [github.com/vaishnavipadala13/CareConnect](https://github.com/vaishnavipadala13/CareConnect)
-- **Issues**: [GitHub Issues](https://github.com/vaishnavipadala13/CareConnect/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/vaishnavipadala13/CareConnect/discussions)
 
 ---
 
-<div align="center">
-
-**Made with ❤️ by [Vaishnavi Padala](https://github.com/vaishnavipadala13)**
-
-⭐ If you find this project helpful, please consider giving it a star!
-
-</div>
