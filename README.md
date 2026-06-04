@@ -174,7 +174,7 @@ CareConnect/
 - Admin authentication for hospital staff
 - Secure session management
 - Role-based access control
-- 
+  
 ##  Usage
 
 ### For Patients
@@ -231,7 +231,8 @@ Contributions are welcome! Please follow these steps:
 
 This project is licensed under the [MIT License](LICENSE).
 
-``
+
+
 
 
 <div align="center">
