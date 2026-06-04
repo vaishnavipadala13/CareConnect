@@ -46,20 +46,18 @@ CareConnect is a decentralized, high-concurrency real-time management system des
 
 ---
 
-###  User Dashboard — Live Hospital Status
+###  User Dashboard - Live Hospital Status
 ![User Dashboard](screenshots/dashboard.png)
 
 > Auto-refreshes every 2 minutes with live blood inventory and bed availability data.
 
 ---
 
-###  Admin Portal
+###  Admin Portal - Control Over Hospital Resources
 
 <table>
   <tr>
     <td><strong>Admin Portal Home</strong></td>
-    <td><strong>Blood Inventory Management</strong></td>
-    <td><strong>Bed Allocation Management</strong></td>
   </tr>
   <tr>
     <td><img src="screenshots/admin-portal.png" width="100%"/></td>
@@ -80,20 +78,33 @@ CareConnect is a decentralized, high-concurrency real-time management system des
 
 ---
 ---
+---
 
-##  App Flow
+## 🔄 App Flow
+
+```
 Landing Page
-└── Ready to Get Started
-├── 👤 User Portal
-│       ├── Create User Account
-│       └── User Login → 📊 Live Dashboard
-│                           ├── Blood Inventory (A+, A-, B+, B-, O+, O-, AB+, AB-)
-│                           └── Bed Availability (by Hospital)
-└── 🛡️ Admin Portal
-├── Create Admin Account (requires Hospital ID)
-└── Admin Login → ⚙️ Admin Management
-├── 🩸 Blood Tab — Add/Edit/Delete blood units
-└── 🛏️ Beds Tab — Add/Edit/Delete hospitals & beds
+    │
+    └──▶ Ready to Get Started
+              │
+              ├──▶ 👤 User Portal
+              │         ├──▶ Create User Account
+              │         └──▶ User Login
+              │                   └──▶ 📊 Live Dashboard
+              │                             ├──▶ 🩸 Blood Inventory
+              │                             │         └── A+, A-, B+, B-, O+, O-, AB+, AB-
+              │                             └──▶ 🛏️ Bed Availability
+              │                                       └── City General, St. Mary, Sunrise Clinic
+              │
+              └──▶ 🛡️ Admin Portal
+                        ├──▶ Create Admin Account *(requires Hospital ID)*
+                        └──▶ Admin Login
+                                  └──▶ ⚙️ Admin Management
+                                            ├──▶ 🩸 Blood Tab
+                                            │         └── Add / Edit / Delete blood units
+                                            └──▶ 🛏️ Beds Tab
+                                                      └── Add / Edit / Delete hospitals & beds
+```
    
 ##  Overview
 
