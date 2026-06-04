@@ -231,9 +231,12 @@ Contributions are welcome! Please follow these steps:
 
 This project is licensed under the [MIT License](LICENSE).
 
+``
+
+
 <div align="center">
 
-Made with ❤️ for healthcare workers and emergency responders everywhere
+**Made with ❤️ for healthcare workers and emergency responders everywhere**
 
  **Star this repo if CareConnect helps save lives** 
 
