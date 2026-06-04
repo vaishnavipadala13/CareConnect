@@ -44,9 +44,9 @@ function Index() {
           </p>
         </div>
 
-        {/* Ready to Get Started - Portal Cards */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold text-center mb-10">Ready to Get Started</h2>
+        {/* Ready to Get Started - Portal Cards Bar */}
+        <div className="max-w-5xl mx-auto mb-16 p-8 rounded-lg bg-primary/5 border-2 border-primary/20">
+          <h2 className="text-3xl font-bold text-center mb-8">Ready to Get Started</h2>
           
           <div className="grid md:grid-cols-2 gap-8">
             {/* User Portal */}
@@ -111,7 +111,7 @@ function Index() {
                   <Button variant="outline" className="w-full gap-2" asChild>
                     <Link to="/admin-login">
                       <ShieldCheck className="h-4 w-4" />
-                      Admin Sign In
+                      Admin Login
                     </Link>
                   </Button>
                 </div>
