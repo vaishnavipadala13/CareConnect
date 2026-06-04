@@ -42,16 +42,6 @@ function Index() {
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             CareConnect provides real-time monitoring of bed availability and blood inventory across hospitals, making healthcare management seamless and efficient.
           </p>
-          
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
-            <Button size="lg" asChild className="gap-2">
-              <Link to="/signup">
-                Get Started
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
         </div>
 
         {/* Features Grid */}
@@ -81,77 +71,84 @@ function Index() {
           </Card>
         </div>
 
-        {/* Authentication Methods */}
-        <div className="max-w-2xl mx-auto mb-16 text-center">
-          <h2 className="text-3xl font-bold mb-4">Sign Up in Seconds</h2>
-          <p className="text-muted-foreground mb-8">
-            Choose your preferred authentication method
-          </p>
-          
-          <div className="grid sm:grid-cols-2 gap-4">
-            <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer border-2 hover:border-primary/50">
-              <Mail className="h-8 w-8 text-primary mx-auto mb-3" />
-              <h3 className="font-semibold mb-2">Gmail</h3>
-              <p className="text-sm text-muted-foreground mb-4">
-                Sign up with your Google account for instant access
+        {/* Portal Cards */}
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
+          {/* User Portal */}
+          <Card className="p-8 border-2 hover:border-primary/50 transition-colors">
+            <div className="mb-6">
+              <User className="h-10 w-10 text-primary mb-4" />
+              <h2 className="text-2xl font-semibold mb-2">User Portal</h2>
+              <p className="text-muted-foreground">
+                View live bed availability, check blood inventory, and access healthcare information in real-time.
               </p>
-              <Button variant="outline" size="sm" className="w-full" asChild>
-                <Link to="/signup">Continue with Gmail</Link>
-              </Button>
-            </Card>
+            </div>
+            
+            <div className="space-y-3">
+              <div>
+                <p className="text-sm font-semibold text-muted-foreground mb-2">New User?</p>
+                <div className="grid grid-cols-2 gap-2">
+                  <Button variant="secondary" size="sm" className="gap-1" asChild>
+                    <Link to="/signup">
+                      <Mail className="h-3 w-3" />
+                      Gmail
+                    </Link>
+                  </Button>
+                  <Button variant="secondary" size="sm" className="gap-1" asChild>
+                    <Link to="/signup">
+                      <User className="h-3 w-3" />
+                      Email
+                    </Link>
+                  </Button>
+                </div>
+              </div>
 
-            <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer border-2 hover:border-primary/50">
-              <User className="h-8 w-8 text-primary mx-auto mb-3" />
-              <h3 className="font-semibold mb-2">Email & Password</h3>
-              <p className="text-sm text-muted-foreground mb-4">
-                Create an account with your email and secure password
-              </p>
-              <Button variant="outline" size="sm" className="w-full" asChild>
-                <Link to="/signup">Create Account</Link>
-              </Button>
-            </Card>
-          </div>
-
-          <div className="mt-6 text-center text-sm border-t pt-6">
-            <p className="text-muted-foreground mb-4">Already have an account?</p>
-            <div className="grid sm:grid-cols-2 gap-3">
-              <div className="space-y-2">
-                <h4 className="font-semibold text-sm">User Portal</h4>
-                <Button variant="secondary" className="w-full gap-2" asChild>
+              <div className="pt-3 border-t">
+                <p className="text-sm font-semibold text-muted-foreground mb-2">Already have an account?</p>
+                <Button className="w-full gap-2" asChild>
                   <Link to="/login">
                     <User className="h-4 w-4" />
                     User Login
                   </Link>
                 </Button>
               </div>
-              <div className="space-y-2">
-                <h4 className="font-semibold text-sm">Admin Portal</h4>
+            </div>
+          </Card>
+
+          {/* Admin Portal */}
+          <Card className="p-8 border-2 hover:border-primary/50 transition-colors">
+            <div className="mb-6">
+              <ShieldCheck className="h-10 w-10 text-primary mb-4" />
+              <h2 className="text-2xl font-semibold mb-2">Admin Portal</h2>
+              <p className="text-muted-foreground">
+                Manage hospital beds, blood inventory, and monitor system activity with comprehensive dashboards.
+              </p>
+            </div>
+            
+            <div className="space-y-3">
+              <div>
+                <p className="text-sm font-semibold text-muted-foreground mb-2">New Admin?</p>
                 <Button variant="secondary" className="w-full gap-2" asChild>
+                  <Link to="/admin-signup">
+                    <ShieldCheck className="h-4 w-4" />
+                    Create Admin Account
+                  </Link>
+                </Button>
+                <p className="text-xs text-muted-foreground mt-2 text-center">
+                  💼 Need a hospital working ID to become an admin
+                </p>
+              </div>
+
+              <div className="pt-3 border-t">
+                <p className="text-sm font-semibold text-muted-foreground mb-2">Already an admin?</p>
+                <Button className="w-full gap-2" asChild>
                   <Link to="/admin-login">
                     <ShieldCheck className="h-4 w-4" />
                     Admin Sign In
                   </Link>
                 </Button>
-                <p className="text-xs text-muted-foreground mt-2">
-                  💼 Become an admin with a hospital working ID
-                </p>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Final CTA */}
-        <div className="max-w-2xl mx-auto text-center mb-12 p-8 rounded-lg bg-primary/5 border border-primary/10">
-          <h2 className="text-3xl font-bold mb-3">Ready to Get Started?</h2>
-          <p className="text-muted-foreground mb-6">
-            Join thousands of healthcare professionals using CareConnect to improve patient care.
-          </p>
-          <Button size="lg" asChild className="gap-2">
-            <Link to="/signup">
-              Create Your Account Now
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </Button>
+          </Card>
         </div>
       </main>
 
