@@ -16,19 +16,19 @@ CareConnect is a decentralized, high-concurrency real-time management system des
 ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
 
 </div>
----
+
 
 ##  Application Walkthrough
 ``
 ###  Landing Page
 ![Landing Page](screenshots/landing.png)
 
-``
+---
 
 ###  Get Started — Portal Selection
 ![Portal Selection](screenshots/portal-selection.png)
 
-``
+---
 
 ###  User Portal
 
@@ -45,14 +45,14 @@ CareConnect is a decentralized, high-concurrency real-time management system des
   </tr>
 </table>
 
-``
+---
 
 ###  User Dashboard - Live Hospital Status
 ![User Dashboard](screenshots/dashboard.png)
 
 > Auto-refreshes every 2 minutes with live blood inventory and bed availability data.
 
-``
+---
 
 ###  Admin Portal 
 
@@ -64,6 +64,8 @@ CareConnect is a decentralized, high-concurrency real-time management system des
     <td><img src="screenshots/admin-portal.png" width="100%"/></td>
   </tr>
 </table>
+
+---
 
 ###  Admin Dashboard - Control Over Hospital Resources
 <table>
