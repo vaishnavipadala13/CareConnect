@@ -53,7 +53,7 @@ CareConnect is a decentralized, high-concurrency real-time management system des
 
 ---
 
-###  Admin Portal - Control Over Hospital Resources
+###  Admin Portal 
 
 <table>
   <tr>
@@ -64,7 +64,7 @@ CareConnect is a decentralized, high-concurrency real-time management system des
   </tr>
 </table>
 
-###  Admin Dashboard
+###  Admin Dashboard - Control Over Hospital Resources
 <table>
   <tr>
     <td><strong>Blood Inventory Management</strong></td>
