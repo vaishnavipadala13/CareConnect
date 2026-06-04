@@ -6,42 +6,63 @@ import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Separator } from "@/components/ui/separator";
-import { User, Mail } from "lucide-react";
-import { loginWithEmail, login, setSession, registerWithGoogle } from "@/lib/auth";
+import { UserPlus, Mail } from "lucide-react";
+import { registerUser, registerWithGoogle, setSession } from "@/lib/auth";
 
-export const Route = createFileRoute("/login")({
-  head: () => ({ meta: [{ title: "User Login — CareConnect" }] }),
-  component: UserLogin,
+export const Route = createFileRoute("/signup")({
+  head: () => ({ meta: [{ title: "Create Account — CareConnect" }] }),
+  component: SignUp,
 });
 
-function UserLogin() {
+function SignUp() {
   const navigate = useNavigate();
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleLogin = () => {
+  const handleSignUp = () => {
     setError("");
 
-    if (!email.trim() || !password.trim()) {
-      setError("Please enter both email and password");
+    if (!name.trim()) {
+      setError("Please enter your full name");
+      return;
+    }
+
+    if (!email.trim()) {
+      setError("Please enter your email address");
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      setError("Passwords do not match");
       return;
     }
 
     setLoading(true);
-    const result = loginWithEmail(email, password);
+    const result = registerUser(email, password, name);
 
-    if (result.success && result.user) {
-      setSession({ user: result.user });
+    if (result.success) {
+      // Auto-login after signup
+      setSession({
+        user: {
+          id: Math.random().toString(36).substring(2, 11),
+          email,
+          name,
+          authMethod: "email",
+          role: "user",
+        },
+      });
       navigate({ to: "/dashboard" });
     } else {
-      setError(result.error || "Login failed");
+      setError(result.error || "An error occurred");
       setLoading(false);
     }
   };
 
-  const handleGoogleLogin = () => {
+  const handleGoogleSignUp = () => {
     setError("");
     setLoading(true);
 
@@ -57,18 +78,7 @@ function UserLogin() {
       setSession({ user: result.user });
       navigate({ to: "/dashboard" });
     } else {
-      setError("Google login failed. Please try again.");
-      setLoading(false);
-    }
-  };
-
-  const handleDemoLogin = () => {
-    setError("");
-    setLoading(true);
-    if (login("user", "user", "user123")) {
-      navigate({ to: "/dashboard" });
-    } else {
-      setError("Demo login failed");
+      setError("Google sign-up failed. Please try again.");
       setLoading(false);
     }
   };
@@ -78,15 +88,27 @@ function UserLogin() {
       <Card className="w-full max-w-md p-8">
         <div className="flex flex-col items-center mb-6">
           <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-3">
-            <User className="h-6 w-6 text-primary" />
+            <UserPlus className="h-6 w-6 text-primary" />
           </div>
-          <h1 className="text-2xl font-bold">Welcome Back</h1>
+          <h1 className="text-2xl font-bold">Create Account</h1>
           <p className="text-sm text-muted-foreground text-center">
-            Sign in to your CareConnect account
+            Join CareConnect to access healthcare services
           </p>
         </div>
 
         <div className="space-y-4">
+          {/* Email signup form */}
+          <div className="space-y-2">
+            <Label htmlFor="name">Full Name</Label>
+            <Input
+              id="name"
+              placeholder="John Doe"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              disabled={loading}
+            />
+          </div>
+
           <div className="space-y-2">
             <Label htmlFor="email">Email Address</Label>
             <Input
@@ -104,10 +126,22 @@ function UserLogin() {
             <Input
               id="password"
               type="password"
-              placeholder="Your password"
+              placeholder="At least 6 characters"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && handleLogin()}
+              disabled={loading}
+            />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="confirmPassword">Confirm Password</Label>
+            <Input
+              id="confirmPassword"
+              type="password"
+              placeholder="Re-enter your password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && handleSignUp()}
               disabled={loading}
             />
           </div>
@@ -119,11 +153,11 @@ function UserLogin() {
           )}
 
           <Button
-            onClick={handleLogin}
+            onClick={handleSignUp}
             className="w-full"
             disabled={loading}
           >
-            {loading ? "Signing in..." : "Sign In"}
+            {loading ? "Creating Account..." : "Create Account"}
           </Button>
 
           {/* Divider */}
@@ -139,42 +173,27 @@ function UserLogin() {
           {/* Google OAuth Button */}
           <Button
             variant="outline"
-            onClick={handleGoogleLogin}
+            onClick={handleGoogleSignUp}
             className="w-full gap-2"
             disabled={loading}
           >
             <Mail className="h-4 w-4" />
-            Continue with Gmail
+            Sign up with Gmail
           </Button>
         </div>
 
-        {/* Sign up link */}
-        <div className="mt-6 text-center text-sm border-t pt-6">
-          <span className="text-muted-foreground">Don't have an account? </span>
-          <Link to="/signup" className="text-primary hover:underline font-medium">
-            Create one
+        {/* Login link */}
+        <div className="mt-6 text-center text-sm">
+          <span className="text-muted-foreground">Already have an account? </span>
+          <Link to="/login" className="text-primary hover:underline font-medium">
+            Sign in
           </Link>
         </div>
 
-        {/* Admin and Demo options */}
-        <div className="mt-4 space-y-2 text-center">
-          <Link to="/admin-login" className="block text-xs text-muted-foreground hover:text-primary">
-            Admin Portal →
-          </Link>
-        </div>
-
-        {/* Demo Info */}
-        <div className="mt-4 p-3 rounded-md bg-amber-50 dark:bg-amber-950 text-xs text-amber-900 dark:text-amber-100">
-          <div className="font-medium mb-1">🧪 Demo Mode</div>
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={handleDemoLogin}
-            className="w-full text-xs"
-            disabled={loading}
-          >
-            Try Demo (Auto-fill)
-          </Button>
+        {/* Info box */}
+        <div className="mt-6 p-3 rounded-md bg-blue-50 dark:bg-blue-950 text-xs text-blue-900 dark:text-blue-100">
+          <div className="font-medium mb-1">🎯 Demo Mode</div>
+          <div>For testing, use any email and password (6+ chars)</div>
         </div>
       </Card>
     </div>

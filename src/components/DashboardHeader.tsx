@@ -1,12 +1,12 @@
 import { Activity, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "@tanstack/react-router";
-import { logout, getSession } from "@/lib/auth";
+import { logout, getSession, type Session } from "@/lib/auth";
 import { useEffect, useState } from "react";
 
 export function DashboardHeader({ title }: { title: string }) {
   const navigate = useNavigate();
-  const [session, setSession] = useState<{ role: string; username: string } | null>(null);
+  const [session, setSession] = useState<Session | null>(null);
 
   useEffect(() => {
     setSession(getSession());
@@ -27,9 +27,12 @@ export function DashboardHeader({ title }: { title: string }) {
         </Link>
         <div className="flex items-center gap-3">
           {session && (
-            <span className="text-sm text-muted-foreground hidden sm:inline">
-              {session.username} ({session.role})
-            </span>
+            <div className="text-sm text-muted-foreground hidden sm:flex items-center gap-2">
+              <span>{session.user.name}</span>
+              <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded">
+                {session.user.authMethod === "google" ? "Gmail" : "Email"}
+              </span>
+            </div>
           )}
           <Button variant="ghost" size="sm" onClick={handleLogout}>
             <LogOut className="h-4 w-4 mr-2" /> Logout
