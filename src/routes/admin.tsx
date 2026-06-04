@@ -33,7 +33,7 @@ function AdminPanel() {
 
   useEffect(() => {
     const s = getSession();
-    if (!s || s.role !== "admin") navigate({ to: "/admin-login" });
+    if (!s || s.user.role !== "admin") navigate({ to: "/admin-login" });
   }, [navigate]);
 
   return (

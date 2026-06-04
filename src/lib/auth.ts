@@ -44,7 +44,8 @@ function saveUsers(users: User[]): void {
 export function registerUser(
   email: string,
   password: string,
-  name: string
+  name: string,
+  role: Role = "user"
 ): { success: boolean; error?: string } {
   const users = getUsers();
 
@@ -69,7 +70,7 @@ export function registerUser(
     email,
     name,
     authMethod: "email",
-    role: "user",
+    role,
   };
 
   users.push(newUser);
@@ -83,7 +84,8 @@ export function registerUser(
  */
 export function registerWithGoogle(
   email: string,
-  name: string
+  name: string,
+  role: Role = "user"
 ): { success: boolean; user: User } {
   const users = getUsers();
 
@@ -97,7 +99,7 @@ export function registerWithGoogle(
       email,
       name,
       authMethod: "google",
-      role: "user",
+      role,
     };
     users.push(user);
     saveUsers(users);
@@ -124,6 +126,29 @@ export function loginWithEmail(
   // For demo, simple comparison (not secure!)
   if (password !== btoa(user.email)) {
     return { success: false, error: "Invalid email or password" };
+  }
+
+  return { success: true, user };
+}
+
+/**
+ * Login admin with email and password
+ */
+export function loginAdminWithEmail(
+  email: string,
+  password: string
+): { success: boolean; user?: User; error?: string } {
+  const users = getUsers();
+  const user = users.find((u) => u.email === email && u.role === "admin" && u.authMethod === "email");
+
+  if (!user) {
+    return { success: false, error: "Invalid admin email or password" };
+  }
+
+  // In production, use bcrypt for password hashing
+  // For demo, simple comparison (not secure!)
+  if (password !== btoa(user.email)) {
+    return { success: false, error: "Invalid admin email or password" };
   }
 
   return { success: true, user };

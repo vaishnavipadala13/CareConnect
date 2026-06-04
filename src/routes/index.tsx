@@ -119,12 +119,20 @@ function Index() {
                 </p>
               </div>
             </div>
-            <Button asChild variant="outline" className="w-full gap-2">
-              <Link to="/admin-login">
-                <ShieldCheck className="h-4 w-4" />
-                Admin Login
-              </Link>
-            </Button>
+            <div className="space-y-2">
+              <Button asChild variant="outline" className="w-full gap-2">
+                <Link to="/admin-login">
+                  <ShieldCheck className="h-4 w-4" />
+                  Admin Login
+                </Link>
+              </Button>
+              <Button asChild variant="secondary" className="w-full gap-2">
+                <Link to="/admin-signup">
+                  <ShieldCheck className="h-4 w-4" />
+                  Create Admin Account
+                </Link>
+              </Button>
+            </div>
           </Card>
         </div>
 
