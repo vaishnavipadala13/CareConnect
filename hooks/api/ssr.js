@@ -1,10 +1,12 @@
 import { fileURLToPath } from "url";
 import path from "path";
 import fs from "fs";
+import { createRequire } from "module";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const serverFile = path.resolve(__dirname, "..", "dist", "server", "server.js");
+const distDir = path.resolve(__dirname, "..", "dist");
 
 let ssrServer;
 async function loadServer() {
