@@ -167,8 +167,8 @@ CareConnect/
 - Quick resource lookup
 - Emergency contact information
 - Resource reservation system
-- 
-- ##  Authentication
+  
+ ##  Authentication
 
 - User-based authentication for patients
 - Admin authentication for hospital staff
@@ -231,7 +231,13 @@ Contributions are welcome! Please follow these steps:
 
 This project is licensed under the [MIT License](LICENSE).
 
+<div align="center">
 
+Made with ❤️ for healthcare workers and emergency responders everywhere
+
+ **Star this repo if CareConnect helps save lives** 
+
+</div>
 
 ---
 
