@@ -1,13 +1,10 @@
-#               CareConnect
-
-[![Vercel Deployment](https://img.shields.io/badge/Vercel-Deployed-black?style=flat-square&logo=vercel)](https://care-connect-neon.vercel.app/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.8.3-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
-[![React](https://img.shields.io/badge/React-19.2.0-61dafb?style=flat-square&logo=react)](https://react.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4.2.1-06b6d4?style=flat-square&logo=tailwindcss)](https://tailwindcss.com/)
-[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
-
-A real-time healthcare resource management web application designed to simplify and improve the process of tracking hospital bed availability and blood bank inventory during emergency situations.
-
+<div align="center"> 
+   
+## CareConnect 
+**Real-Time Hospital Bed & Blood Tracker**
+CareConnect is a decentralized, high-concurrency real-time management system designed to track hospital bed availability and blood bank inventories. Leveraging automated state polling and secure role-based access control, the system refreshes every 2 minutes — ensuring emergency responders, medical staff, and patients always have access to life-saving inventory data without delay.
+<div/>
+   
 ## 🎯 Overview
 
 CareConnect is a comprehensive platform that enables hospitals, blood banks, emergency responders, and patients to quickly access critical healthcare resources during emergencies. The application provides real-time visibility into:
