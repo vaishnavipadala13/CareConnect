@@ -5,6 +5,17 @@
 CareConnect is a decentralized, high-concurrency real-time management system designed to track hospital bed availability and blood bank inventories. Leveraging automated state polling and secure role-based access control, the system refreshes every 2 minutes — ensuring emergency responders, medical staff, and patients always have access to life-saving inventory data without delay.
 
 </div>
+
+<div align="center">
+
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+
+</div>
    
 ## 🎯 Overview
 
