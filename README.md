@@ -21,12 +21,12 @@ CareConnect is a decentralized, high-concurrency real-time management system des
 ##  Application Walkthrough
 
 ###  Landing Page
-![Landing Page](screenshots/landing.png)
+![Landing Page](landing.png)
 
 ---
 
 ###  Get Started — Portal Selection
-![Portal Selection](screenshots/portal-selection.png)
+![Portal Selection](portal-selection.png)
 
 ---
 
@@ -39,16 +39,16 @@ CareConnect is a decentralized, high-concurrency real-time management system des
     <td><strong>User Login</strong></td>
   </tr>
   <tr>
-    <td><img src="screenshots/user-portal.png" width="100%"/></td>
-    <td><img src="screenshots/create-account.png" width="100%"/></td>
-    <td><img src="screenshots/user-login.png" width="100%"/></td>
+    <td><img src="user-portal.png" width="100%"/></td>
+    <td><img src="create-account.png" width="100%"/></td>
+    <td><img src="user-login.png" width="100%"/></td>
   </tr>
 </table>
 
 ---
 
 ###  User Dashboard - Live Hospital Status
-![User Dashboard](screenshots/dashboard.png)
+![User Dashboard](dashboard.png)
 
 > Auto-refreshes every 2 minutes with live blood inventory and bed availability data.
 
@@ -61,7 +61,7 @@ CareConnect is a decentralized, high-concurrency real-time management system des
     <td><strong>Admin Portal Home</strong></td>
   </tr>
   <tr>
-    <td><img src="screenshots/admin-portal.png" width="100%"/></td>
+    <td><img src="admin-portal.png" width="100%"/></td>
   </tr>
 </table>
 
@@ -74,8 +74,8 @@ CareConnect is a decentralized, high-concurrency real-time management system des
     <td><strong>Bed Allocation Management</strong></td>
   </tr>
   <tr>
-    <td><img src="screenshots/admin-blood.png" width="100%"/></td>
-    <td><img src="screenshots/admin-beds.png" width="100%"/></td>
+    <td><img src="admin-blood.png" width="100%"/></td>
+    <td><img src="admin-beds.png" width="100%"/></td>
   </tr>
 </table>
 
