@@ -20,65 +20,51 @@ CareConnect is a decentralized, high-concurrency real-time management system des
 
 ##  Application Walkthrough
 
-###  Landing Page
-![Landing Page](landing.png)
-
----
-
-###  Get Started — Portal Selection
-![Portal Selection](portal-selection.png)
-
----
-
-###  User Portal
 
 <table>
   <tr>
-    <td><strong>User Portal Home</strong></td>
-    <td><strong>Create Account</strong></td>
-    <td><strong>User Login</strong></td>
+    <td align="center" width="33%">
+      <strong> Landing Page</strong><br/><br/>
+      <img src="landing.png" width="100%"/>
+    </td>
+    <td align="center" width="33%">
+      <strong> Portal Selection</strong><br/><br/>
+      <img src="portal-selection.png" width="100%"/>
+    </td>
+    <td align="center" width="33%">
+      <strong> User Portal Home</strong><br/><br/>
+      <img src="user-portal.png" width="100%"/>
+    </td>
   </tr>
   <tr>
-    <td><img src="user-portal.png" width="100%"/></td>
-    <td><img src="create-account.png" width="100%"/></td>
-    <td><img src="user-login.png" width="100%"/></td>
+    <td align="center" width="33%">
+      <strong> Create Account</strong><br/><br/>
+      <img src="create-account.png" width="100%"/>
+    </td>
+    <td align="center" width="33%">
+      <strong> User Login</strong><br/><br/>
+      <img src="user-login.png" width="100%"/>
+    </td>
+    <td align="center" width="33%">
+      <strong> User Dashboard</strong><br/><br/>
+      <img src="dashboard.png" width="100%"/>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="33%">
+      <strong> Admin Portal Home</strong><br/><br/>
+      <img src="admin-portal.png" width="100%"/>
+    </td>
+    <td align="center" width="33%">
+      <strong> Blood Inventory Management</strong><br/><br/>
+      <img src="admin-blood.png" width="100%"/>
+    </td>
+    <td align="center" width="33%">
+      <strong> Bed Allocation Management</strong><br/><br/>
+      <img src="admin-beds.png" width="100%"/>
+    </td>
   </tr>
 </table>
-
----
-
-###  User Dashboard - Live Hospital Status
-![User Dashboard](dashboard.png)
-
-> Auto-refreshes every 2 minutes with live blood inventory and bed availability data.
-
----
-
-###  Admin Portal 
-
-<table>
-  <tr>
-    <td><strong>Admin Portal Home</strong></td>
-  </tr>
-  <tr>
-    <td><img src="admin-portal.png" width="100%"/></td>
-  </tr>
-</table>
-
----
-
-###  Admin Dashboard - Control Over Hospital Resources
-<table>
-  <tr>
-    <td><strong>Blood Inventory Management</strong></td>
-    <td><strong>Bed Allocation Management</strong></td>
-  </tr>
-  <tr>
-    <td><img src="admin-blood.png" width="100%"/></td>
-    <td><img src="admin-beds.png" width="100%"/></td>
-  </tr>
-</table>
-
 ---
 
 
