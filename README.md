@@ -42,7 +42,7 @@ CareConnect is a decentralized, high-concurrency real-time management system des
       <img src="create-account.png" width="100%"/>
     </td>
     <td align="center" width="33%">
-      <strong> User Login</strong><br/><br/>
+      <strong>Login</strong><br/><br/>
       <img src="user-login.png" width="100%"/>
     </td>
     <td align="center" width="33%">
@@ -316,7 +316,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 **Made with ❤️ for healthcare workers and emergency responders everywhere**
 
- **Star this repo if CareConnect helps save lives** 
+
 
 </div>
 
