@@ -312,13 +312,6 @@ This project is licensed under the [MIT License](LICENSE).
 
 
 
-<div align="center">
-
-**Made with ❤️ for healthcare workers and emergency responders everywhere**
-
-
-
-</div>
 
 ---
 
